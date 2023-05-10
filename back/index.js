@@ -3,6 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import { default as client } from './database/db_connect.js';
+import ModelFilm from './models/ModelFilm.js';
+
+import { ObjectId } from 'mongodb';
 
 dotenv.config();
 const db_name = process.env.MONGO_DB_NAME;
@@ -18,7 +21,26 @@ app.get('/', (req, res) => {
         }
         )
         .catch(error => console.error(error));
-    }
+}
+);
+
+app.delete('/delete/:id', function(req, res) {
+    const id = req.params.id;
+    client.db(db_name).collection(collection_name).deleteOne({_id: new ObjectId(id)})
+        .then(result => {
+            res.json(result);
+        }
+        )
+        .catch(error => console.error(error));
+});
+
+app.post('/addFilm', (req, res) => {
+    client.db(db_name).collection(collection_name).insertOne(req.body)
+        .then(result => {
+            res.json(result);
+        })
+        .catch(error => console.error(error));
+}
 );
 
 app.listen(3000, function () {
