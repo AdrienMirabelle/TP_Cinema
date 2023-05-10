@@ -1,0 +1,93 @@
+[
+    {
+        "titre": "Your Name",
+        "annee": 2016,
+        "realisateur": "Makoto Shinkai",
+        "scenariste": "Makoto Shinkai",
+        "studio": "CoMix Wave Films",
+        "genre": [
+            "romance",
+            "fantasy"
+        ],
+        "langue": "japonais",
+        "duree": 107,
+        "distribution": [
+            {
+                "nom": "Ryunosuke Kamiki",
+                "role": "Taki Tachibana"
+            },
+            {
+                "nom": "Mone Kamishiraishi",
+                "role": "Mitsuha Miyamizu"
+            }
+        ]
+    },
+    {
+        "titre": "Le Conte de la Princesse Kaguya",
+        "annee": 2013,
+        "realisateur": "Isao Takahata",
+        "scenariste": "Isao Takahata",
+        "studio": "Studio Ghibli",
+        "genre": [
+            "drame",
+            "fantasy"
+        ],
+        "langue": "japonais",
+        "duree": 137,
+        "distribution": [
+            {
+                "nom": "Aki Asakura",
+                "role": "Kaguya-hime"
+            },
+            {
+                "nom": "Kengo Kora",
+                "role": "Sutemaru"
+            }
+        ]
+    },
+    {
+        "titre": "Le Vent se lève",
+        "annee": 2013,
+        "realisateur": "Hayao Miyazaki",
+        "scenariste": "Hayao Miyazaki",
+        "studio": "Studio Ghibli",
+        "genre": [
+            "drame",
+            "romance"
+        ],
+        "langue": "japonais",
+        "duree": 126,
+        "distribution": [
+            {
+                "nom": "Hideaki Anno",
+                "role": "Caproni"
+            },
+            {
+                "nom": "Miori Takimoto",
+                "role": "Naoko Satomi"
+            }
+        ]
+    },
+    {
+        "titre": "Mon voisin Totoro",
+        "annee": 1988,
+        "realisateur": "Hayao Miyazaki",
+        "scenariste": "Hayao Miyazaki",
+        "studio": "Studio Ghibli",
+        "genre": [
+            "fantasy"
+        ],
+        "langue": "japonais",
+        "duree": 86,
+        "distribution": [
+            {
+                "nom": "Noriko Hidaka",
+                "role": "Satsuki Kusakabe"
+            },
+            {
+                "nom": "Chika Sakamoto",
+                "role": "Mei Kusakabe"
+            }
+        ]
+    }
+]
