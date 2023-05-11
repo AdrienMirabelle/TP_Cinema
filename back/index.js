@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    client.db(db_name).collection(collection_name).find().sort({titre:1}).toArray()
+    client.db(db_name).collection(collection_name).find().sort({ titre: 1 }).toArray()
         .then(results => {
             res.json(results);
         }
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 app.get('/film/:id', (req, res) => {
     const id = req.params.id;
-    client.db(db_name).collection(collection_name).findOne({_id: new ObjectId(id)})
+    client.db(db_name).collection(collection_name).findOne({ _id: new ObjectId(id) })
         .then(results => {
             res.json(results);
         }
@@ -37,9 +37,9 @@ app.get('/film/:id', (req, res) => {
 }
 );
 
-app.delete('/delete/:id', function(req, res) {
+app.delete('/delete/:id', function (req, res) {
     const id = req.params.id;
-    client.db(db_name).collection(collection_name).deleteOne({_id: new ObjectId(id)})
+    client.db(db_name).collection(collection_name).deleteOne({ _id: new ObjectId(id) })
         .then(result => {
             res.json(result);
         }
@@ -58,10 +58,12 @@ app.post('/addFilm', (req, res) => {
 
 app.put('/updateFilm/:id', (req, res) => {
     const id = req.params.id;
-    client.db(db_name).collection(collection_name).updateOne({_id: new ObjectId(id)}, {$set: req.body})
+    const updatedFilm = new Film(req.body);
+    client.db(db_name).collection(collection_name).updateOne({ _id: new ObjectId(id) }, { $set: updatedFilm })
         .then(result => {
             res.json(result);
-        })
+        }
+        )
         .catch(error => console.error(error));
 });
 

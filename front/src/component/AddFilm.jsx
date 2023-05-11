@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Form, Button } from 'react-bootstrap';
+
 function AddFilm(){
     const [data, setData] = useState([])
 
@@ -28,29 +30,64 @@ function AddFilm(){
             });
     }
 
-    return(
+    return (
         <div>
             <h1>Ajouter un film</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Titre: </label>
-                <input type="text" name="titre" id="titre" placeholder="Titre du film" required/>
-                <label>Réalisateur: </label>
-                <input type="text" name="realisateur" id="realisateur" placeholder="Réalisateur" required/>
-                <label>Genre: </label>
-                <input type="text" name="genre" id="genre" placeholder="Genre" required/>
-                <label>Année de sortie: </label>
-                <input type="number" name="annee" id="annee" placeholder="Année de sortie" min="1895" max="9999" value="1895" onChange={(e) => console.log(e.target.value)} required/>
-                <label>Durée: </label>
-                <input type="number" name="duree" id="duree" placeholder="Durée en minutes" min="1" max="9999" value="1" onChange={(e) => console.log(e.target.value)} required/>
-                <label>Acteurs: </label>
-                <input type="text" name="acteurs" id="acteurs" placeholder="Acteurs" required/>
-                <label>Synopsis: </label>
-                <textarea name="synopsis" id="synopsis" placeholder="Synopsis" required/>
-                <label>Image: </label>
-                <input type="text" name="image" id="image" placeholder="Image" required/>
-                <input type="submit" value="Ajouter"/>
-            </form>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="titre">
+                    <Form.Label>Titre:</Form.Label>
+                    <Form.Control type="text" name="titre" placeholder="Titre du film" required
+                        onChange={(e) => setData({ ...data, titre: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="realisateur">
+                    <Form.Label>Réalisateur:</Form.Label>
+                    <Form.Control type="text" name="realisateur" placeholder="Réalisateur" required
+                        onChange={(e) => setData({ ...data, realisateur: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="genre">
+                    <Form.Label>Genre:</Form.Label>
+                    <Form.Control type="text" name="genre" placeholder="Genre" required
+                        onChange={(e) => setData({ ...data, genre: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="annee">
+                    <Form.Label>Année de sortie:</Form.Label>
+                    <Form.Control type="number" name="annee" placeholder="Année de sortie" min="1895" max="9999" value="1895" required
+                        onChange={(e) => setData({ ...data, annee: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="duree">
+                    <Form.Label>Durée:</Form.Label>
+                    <Form.Control type="number" name="duree" placeholder="Durée en minutes" min="1" max="9999" value="1" required
+                        onChange={(e) => setData({ ...data, duree: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="acteurs">
+                    <Form.Label>Acteurs:</Form.Label>
+                    <Form.Control type="text" name="acteurs" placeholder="Acteurs" required
+
+                        onChange={(e) => setData({ ...data, acteurs: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="synopsis">
+                    <Form.Label>Synopsis:</Form.Label>
+                    <Form.Control as="textarea" name="synopsis" placeholder="Synopsis" required
+                        onChange={(e) => setData({ ...data, synopsis: e.target.value })}
+                    />
+                </Form.Group>
+                <Form.Group controlId="image">
+                    <Form.Label>Image:</Form.Label>
+                    <Form.Control type="text" name="image" placeholder="Image" required
+                        onChange={(e) => setData({ ...data, image: e.target.value })}
+                    />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Ajouter
+                </Button>
+            </Form>
         </div>
-    )
+    );
 }
 export default AddFilm;

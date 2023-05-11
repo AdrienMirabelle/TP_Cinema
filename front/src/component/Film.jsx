@@ -47,7 +47,8 @@ function Film() {
                 <div className="col-md-8">
                     <Card style={{ width: "100%" }}>
                         <Card.Body>
-                            <button className="deleteFilm" onClick={() => handleDeleteClick(data._id, data.titre)}>X</button>
+                            <button className="btnAction" onClick={() => handleDeleteClick(data._id, data.titre)}>X</button>
+                            <button className="btnAction" onClick={() => navigate(`/edit/${data._id}`)}>📝</button>
                             <Card.Text>
                                 <strong>Réalisateur:</strong> {data.realisateur}
                                 <br />
