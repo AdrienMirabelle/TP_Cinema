@@ -7,7 +7,7 @@ const user = process.env.MONGO_USER;
 const password = process.env.MONGO_PASSWORD;
 const url = process.env.MONGO_CLUSTER_URI;
 
-const db_link = `mongodb+srv://${user}:${password}@${url}/?retryWrites=true&w=majority";`;
+const db_link = `mongodb+srv://${user}:${password}@${url}/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(db_link);
 async function connect() {

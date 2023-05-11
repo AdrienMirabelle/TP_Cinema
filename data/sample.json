@@ -20,7 +20,9 @@
                 "nom": "Mone Kamishiraishi",
                 "role": "Mitsuha Miyamizu"
             }
-        ]
+        ],
+        "img": "https://fr.web.img2.acsta.net/pictures/16/12/12/13/49/295774.jpg",
+        "synopsis" : "Mitsuha, adolescente coincée dans une famille traditionnelle, rêve de quitter ses montagnes natales pour découvrir la vie trépidante de Tokyo. Elle est loin d'imaginer pouvoir vivre l'aventure urbaine dans la peau de... Taki, un jeune lycéen vivant à Tokyo. À travers ses rêves, Mitsuha se voit littéralement propulsée dans la vie du jeune garçon. Quel mystère se cache derrière ces rêves étranges qui unissent deux destinées que tout oppose et qui ne se sont jamais rencontrées ?"
     },
     {
         "titre": "Le Conte de la Princesse Kaguya",
@@ -43,7 +45,9 @@
                 "nom": "Kengo Kora",
                 "role": "Sutemaru"
             }
-        ]
+        ],
+        "img": "https://fr.web.img6.acsta.net/pictures/14/04/25/12/27/122290.jpg",
+        "synopsis": "Par un jour brumeux, Okina, vieux coupeur de bambous, découvre à l'intérieur d'une canne une minuscule créature endormie. Il la ramène chez lui. Élevée par Okina et son épouse, Kaguya-Hime, soit princesse lumineuse, devient très rapidement une magnifique jeune fille."
     },
     {
         "titre": "Le Vent se lève",
@@ -66,7 +70,9 @@
                 "nom": "Miori Takimoto",
                 "role": "Naoko Satomi"
             }
-        ]
+        ],
+        "img": "https://fr.web.img6.acsta.net/pictures/210/525/21052583_2013102415340471.jpg",
+        "synopsis": "Au Japon, dans les années 1910, le jeune Jiro Horikoshi est fasciné par les réalisations du concepteur d'avions Giovanni Caproni. Dans ses rêves, il s'envole dans l'azur et le rencontre. Il voudrait devenir pilote, mais il sait que sa vue déficiente ne le lui permettra jamais. Le temps venu, il décide d'entreprendre des études en génie aéronautique et les réussit brillamment. En 1927, il est engagé dans une prestigieuse entreprise d'ingénierie"
     },
     {
         "titre": "Mon voisin Totoro",
@@ -88,6 +94,33 @@
                 "nom": "Chika Sakamoto",
                 "role": "Mei Kusakabe"
             }
-        ]
+        ],
+        "img": "https://medias.boutique.lab.arte.tv/prod/43225_vod_thumb_193692.jpg",
+        "synopsis": "Deux petites filles, Mei, 4 ans, et Satsuki, 10 ans, s'installent dans une grande maison à la campagne avec leur père pour se rapprocher de l'hôpital où séjourne leur mère. Elles découvrent la nature tout autour de la maison et, surtout, l'existence de créatures merveilleuses, les Totoros, avec qui elles deviennent très amies."
+    },
+    {
+        "titre": "Violet Evergarden le film",
+        "annee": 2020,
+        "realisateur": "Taichi Ishidate",
+        "scenariste": "Reiko Yoshida",
+        "studio": "Kyoto Animation",
+        "genre": [
+            "drame",
+            "fantasy"
+        ],
+        "langue": "japonais",
+        "duree": 140,
+        "distribution": [
+            {
+                "nom": "Yui Ishikawa",
+                "role": "Violet Evergarden"
+            },
+            {
+                "nom": "Daisuke Namikawa",
+                "role": "Gilbert Bougainvillea"
+            }
+        ],
+        "img": "https://media.senscritique.com/media/000020050723/300/violet_evergarden_le_film.jpg",
+        "synopsis": "Violet Evergarden est une Auto Memories Doll, un être mécanique créé par un savant de génie pour aider son épouse aveugle à écrire ses romans. Après la mort de ce dernier, Violet est engagée comme secrétaire de la riche famille Bougainvillea. Elle y découvre un monde nouveau, où les relations humaines sont complexes et les sentiments, difficiles à exprimer. Elle se met alors à écrire des lettres pour comprendre les émotions qui la traversent."
     }
 ]

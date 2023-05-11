@@ -1,25 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+import {Link, Routes, Route} from "react-router-dom";
 
-import axios from 'axios'
+import Accueil from "./component/Accueil";
+import Film from "./component/Film";
 
-function App() {
+import './style/App.css';
 
-  const [film, setFilm] = useState({})
-  axios.delete('http://localhost:3000/delete/{645bca8f68c0c58624d5e9b2}')
-    .then(res => {
-      setFilm(res.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-
+function App() {  
   return (
-    <>
-      <div>
-      </div>
-    </>
-  )
+    <div className="App">
+    <div className="navBar">
+      <ul className="lien_container">
+        <Link to="/"><li>Accueil</li></Link>
+        <Link to="/ajoutFilm"><li>Ajouter un Film</li></Link>
+      </ul>
+    </div>
+    <Routes>
+          <Route path="/" element={<Accueil/>}/>
+          <Route path="/film/:id" element={<Film/>}/>
+          <Route path="/ajoutFilm"/>
+        </Routes>
+  </div>
+  );
 }
 
 export default App

@@ -1,0 +1,58 @@
+h1{
+  color: white;
+}
+
+button{
+  width: 100%;
+}
+
+.categorie{
+  padding-bottom: 50px;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.card-img-top{
+  width: 296px;
+}
+
+.card-body{
+  text-align: left;
+}
+
+.deleteFilm{
+  width: 50px;
+  float: right;
+}
+
+/* Menu de navigation */
+.navBar, ul{
+  list-style-type: none;
+}
+
+.lien_container{
+  display: inline-flex;
+}
+.lien_container li{
+  width: 200px;
+  margin: 10px;
+}
+.lien_container a{
+    margin: 50px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+.lien_container a:hover{
+  box-shadow: 10px 5px 5px white;
+  color: white;
+}
