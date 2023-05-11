@@ -2,8 +2,11 @@ import {Link, Routes, Route} from "react-router-dom";
 
 import Accueil from "./component/Accueil";
 import Film from "./component/Film";
+import Explication from "./component/Explication";
+import Footer from "./component/Footer";
 
 import './style/App.css';
+import { Navbar } from "react-bootstrap";
 
 function App() {  
   return (
@@ -12,14 +15,19 @@ function App() {
       <ul className="lien_container">
         <Link to="/"><li>Accueil</li></Link>
         <Link to="/ajoutFilm"><li>Ajouter un Film</li></Link>
+        <Link to="/Explication"><li>Explication du projet</li></Link>
       </ul>
     </div>
     <Routes>
           <Route path="/" element={<Accueil/>}/>
+          <Route path="/Explication" element={<Explication/>}/>
           <Route path="/film/:id" element={<Film/>}/>
           <Route path="/ajoutFilm"/>
         </Routes>
+        <Navbar />
+        <Footer />
   </div>
+
   );
 }
 
