@@ -39,7 +39,7 @@ function Accueil() {
                                     <strong>Durée:</strong> {film.duree} minutes
                                     <br />
                                     <strong>Genre(s):</strong>{' '}
-                                    {film.genre.map((genre, index) => (
+                                    {film.genre && film.genre.map((genre, index) => (
                                         <span key={index}>{genre} </span>
                                     ))}
                                 </Card.Text>

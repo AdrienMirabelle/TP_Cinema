@@ -60,12 +60,16 @@ function Film() {
                                 <br />
                                 <strong>Acteur(s):</strong>{' '}
                                 <br />
-                                {data.distribution && data.distribution.map((person, index) => (
-                                    <span key={index}>
-                                        {person.nom} - Rôle: {person.role}
-                                        <br />
-                                    </span>
-                                ))}
+                                {data.distribution && data.distribution.length > 0 ? (
+                                    data.distribution.map((person, index) => (
+                                        <span key={index}>
+                                            {person.nom} - Rôle: {person.role}
+                                            <br />
+                                        </span>
+                                    ))
+                                ) : (
+                                    <span>N/A</span>
+                                )}
                                 <br />
                                 <strong>Synopsis:</strong> {data.synopsis}
                             </Card.Text>

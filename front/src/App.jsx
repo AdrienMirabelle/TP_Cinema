@@ -4,6 +4,7 @@ import Accueil from "./component/Accueil";
 import Film from "./component/Film";
 import Explication from "./component/Explication";
 import Footer from "./component/Footer";
+import AddFilm from "./component/AddFilm";
 
 import './style/App.css';
 import { Navbar } from "react-bootstrap";
@@ -22,7 +23,7 @@ function App() {
           <Route path="/" element={<Accueil/>}/>
           <Route path="/Explication" element={<Explication/>}/>
           <Route path="/film/:id" element={<Film/>}/>
-          <Route path="/ajoutFilm"/>
+          <Route path="/ajoutFilm" element={<AddFilm/>}/>
         </Routes>
         <Navbar />
         <Footer />

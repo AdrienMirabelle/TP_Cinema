@@ -6,7 +6,7 @@ import { ObjectId } from 'mongodb';
 import bodyParser from 'body-parser';
 
 import { default as client } from './database/db_connect.js';
-import ModelFilm from './models/ModelFilm.js';
+import { default as Film } from './models/ModelFilm.js';
 
 dotenv.config();
 const db_name = process.env.MONGO_DB_NAME;
@@ -48,7 +48,8 @@ app.delete('/delete/:id', function(req, res) {
 });
 
 app.post('/addFilm', (req, res) => {
-    client.db(db_name).collection(collection_name).insertOne(req.body)
+    const newFilm = new Film(req.body.film);
+    client.db(db_name).collection(collection_name).insertOne(newFilm)
         .then(result => {
             res.json(result);
         })
