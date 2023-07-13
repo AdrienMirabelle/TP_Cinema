@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  # haproxy:
+  #   build:
+  #     context: ./load-balancer
+  #   hostname: haproxy
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   networks:
+  #     DMZ1:
+  #       ipv4_address: 192.168.50.5
+  web1:
+    build:
+      context: ./front
+    hostname: web1
+    networks:
+      DMZ1:
+        ipv4_address: 192.168.50.10
+  web2:
+    build:
+      context: ./front
+    hostname: web2
+    networks:
+      DMZ1:
+        ipv4_address: 192.168.50.20
+  # mongo:
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
+  #   restart: always
+  #   env_file:
+  #     - ./back/.env
+  #   volumes:
+  #     - ./data:/data_index
+
+networks:
+  DMZ1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "192.168.50.0/24"
+  DMZ2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "10.0.50.0/24"
+
+volumes:
+  BDD:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      device: "./data"
