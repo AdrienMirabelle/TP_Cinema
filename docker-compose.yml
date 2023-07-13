@@ -18,6 +18,8 @@ services:
     networks:
       DMZ1:
         ipv4_address: 192.168.50.10
+      DMZ2:
+        ipv4_address: 10.0.50.10
   web2:
     build:
       context: ./front
@@ -25,6 +27,8 @@ services:
     networks:
       DMZ1:
         ipv4_address: 192.168.50.20
+      DMZ2:
+        ipv4_address: 10.0.50.20
   # mongo:
   #   image: mongo
   #   ports:
