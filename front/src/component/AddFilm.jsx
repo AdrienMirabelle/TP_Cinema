@@ -20,7 +20,7 @@ function AddFilm(){
         const synopsis = e.target.synopsis.value;
         const image = e.target.image.value;
         const film = {titre, realisateur, genre, annee, duree, acteurs, synopsis, image};
-        axios.post(`http://localhost:3000/addFilm`, {film})
+        axios.post(`http://10.0.50.5:3000/addFilm`, {film})
             .then(res => {
                 setData(res.data);
                 navigate('/');

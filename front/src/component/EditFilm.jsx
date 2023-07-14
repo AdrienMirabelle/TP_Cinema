@@ -14,7 +14,7 @@ function EditFilm() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/film/${id}`)
+            .get(`http://10.0.50.5:3000/film/${id}`)
             .then((res) => {
                 setData(res.data);
             })
@@ -30,7 +30,7 @@ function EditFilm() {
         );
         if (confirmEdit) {
             axios
-                .put(`http://localhost:3000/updateFilm/${id}`, data)
+                .put(`http://10.0.50.5:3000/updateFilm/${id}`, data)
                 .then(() => {
                     navigate(`/film/${id}`);
                 })
