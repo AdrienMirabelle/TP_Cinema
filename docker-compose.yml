@@ -30,10 +30,11 @@ services:
       DMZ2:
         ipv4_address: 10.0.50.20
   script:
-    image: alpine:latest
+    build:
+      context: ./auto
     volumes:
-      - .:/app
-    command: ["sh", "/app/pull.sh"]
+      - ./auto:/app
+    command: /app/pull.sh
   # mongo:
   #   image: mongo
   #   ports:
