@@ -1,3 +1,5 @@
+import https from 'https';
+import fs from 'fs';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -67,6 +69,9 @@ app.put('/updateFilm/:id', (req, res) => {
         .catch(error => console.error(error));
 });
 
-app.listen(3000, function () {
-    console.log('server listening on http://localhost:3000/');
+https.createServer({
+    key: fs.readFileSync('private.key'),
+    cert: fs.readFileSync('cert.pem')
+}, app).listen(3000, () => {
+    console.log('server listening on https://localhost:3000/');
 });
