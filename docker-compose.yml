@@ -29,6 +29,17 @@ services:
         ipv4_address: 192.168.50.20
       DMZ2:
         ipv4_address: 10.0.50.20
+  backend:
+    build:
+      context: ./back
+    hostname: express
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./back/.env
+    networks:
+      DMZ2:
+        ipv4_address: 10.0.50.5
   # mongo:
   #   image: mongo
   #   ports:
