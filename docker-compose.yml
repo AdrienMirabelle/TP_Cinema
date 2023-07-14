@@ -29,6 +29,11 @@ services:
         ipv4_address: 192.168.50.20
       DMZ2:
         ipv4_address: 10.0.50.20
+  script:
+    image: alpine:latest
+    volumes:
+      - .:/app
+    command: ["sh", "/app/pull.sh"]
   # mongo:
   #   image: mongo
   #   ports:
