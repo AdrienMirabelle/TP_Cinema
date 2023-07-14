@@ -1,16 +1,16 @@
 version: "3"
 
 services:
-  # haproxy:
-  #   build:
-  #     context: ./load-balancer
-  #   hostname: haproxy
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   networks:
-  #     DMZ1:
-  #       ipv4_address: 192.168.50.5
+  haproxy:
+    build:
+      context: ./load-balancer
+    hostname: haproxy
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      DMZ1:
+        ipv4_address: 192.168.50.5
   web1:
     build:
       context: ./front
