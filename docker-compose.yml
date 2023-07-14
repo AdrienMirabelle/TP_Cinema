@@ -29,15 +29,14 @@ services:
         ipv4_address: 192.168.50.20
       DMZ2:
         ipv4_address: 10.0.50.20
-  # mongo:
-  #   image: mongo
-  #   ports:
-  #     - "27017:27017"
-  #   restart: always
-  #   env_file:
-  #     - ./back/.env
-  #   volumes:
-  #     - ./data:/data_index
+  update:
+    image: alpine
+    command: |
+      apk add --update --no-cache bash
+      cd /app
+      git pull
+      docker-compose up -d --build
+    restart: always
 
 networks:
   DMZ1:
@@ -52,7 +51,7 @@ networks:
         - subnet: "10.0.50.0/24"
 
 volumes:
-  BDD:
+  repo:
     driver: local
     driver_opts:
       type: "none"
