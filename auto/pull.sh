@@ -14,9 +14,6 @@ if ! command -v docker &>/dev/null; then
   apk add --no-cache docker
 fi
 
-# Get the latest commit hash from GitHub
-git fetch origin
-
 # Get the hash of the current commit
 current_commit=$(git rev-parse HEAD)
 
