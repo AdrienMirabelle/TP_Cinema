@@ -29,6 +29,12 @@ services:
         ipv4_address: 192.168.50.20
       DMZ2:
         ipv4_address: 10.0.50.20
+  script:
+    build:
+      context: ./auto
+    volumes:
+      - ./auto:/app
+    command: /app/pull.sh
   backend:
     build:
       context: ./back
@@ -40,15 +46,6 @@ services:
     networks:
       DMZ2:
         ipv4_address: 10.0.50.5
-  # mongo:
-  #   image: mongo
-  #   ports:
-  #     - "27017:27017"
-  #   restart: always
-  #   env_file:
-  #     - ./back/.env
-  #   volumes:
-  #     - ./data:/data_index
 
 networks:
   DMZ1:
