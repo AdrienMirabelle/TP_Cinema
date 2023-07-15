@@ -13,7 +13,7 @@ function Film() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/film/${id}`)
+        axios.get(`http://10.0.50.5:3000/film/${id}`)
             .then(res => {
                 setData(res.data);
             })
@@ -25,7 +25,7 @@ function Film() {
     const handleDeleteClick = (id, name) => {
         const confirmDelete = confirm(`Voulez-vous vraiment supprimer "${name}" ?`);
         if (confirmDelete) {
-            axios.delete(`http://localhost:3000/delete/${id}`)
+            axios.delete(`http://10.0.50.5:3000/delete/${id}`)
                 .then(res => {
                     navigate('/');
                 })

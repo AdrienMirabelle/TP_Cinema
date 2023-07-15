@@ -1,16 +1,16 @@
 version: "3"
 
 services:
-  # haproxy:
-  #   build:
-  #     context: ./load-balancer
-  #   hostname: haproxy
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   networks:
-  #     DMZ1:
-  #       ipv4_address: 192.168.50.5
+  haproxy:
+    build:
+      context: ./load-balancer
+    hostname: haproxy
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      DMZ1:
+        ipv4_address: 192.168.50.5
   web1:
     build:
       context: ./front
@@ -35,15 +35,17 @@ services:
     volumes:
       - ./auto:/app
     command: /app/pull.sh
-  # mongo:
-  #   image: mongo
-  #   ports:
-  #     - "27017:27017"
-  #   restart: always
-  #   env_file:
-  #     - ./back/.env
-  #   volumes:
-  #     - ./data:/data_index
+  backend:
+    build:
+      context: ./back
+    hostname: express
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./back/.env
+    networks:
+      DMZ2:
+        ipv4_address: 10.0.50.5
 
 networks:
   DMZ1:
