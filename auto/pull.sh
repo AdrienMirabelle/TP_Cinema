@@ -14,7 +14,7 @@ git fetch origin
 current_commit=$(git rev-parse HEAD)
 
 # Compare the two hashes
-if [[ $current_commit != origin/test_update ]]; then
+if [[ $current_commit != origin/main ]]; then
   echo "There are changes on GitHub."
   echo "Pulling changes..."
   git pull
