@@ -7,6 +7,13 @@ if ! command -v git &>/dev/null; then
   apk add --no-cache git
 fi
 
+# Check if Docker is installed
+if ! command -v docker &>/dev/null; then
+  echo "Docker is not installed."
+  echo "Installing Docker..."
+  apk add --no-cache docker
+fi
+
 # Get the latest commit hash from GitHub
 git fetch origin
 
@@ -20,8 +27,9 @@ latest_commit=$(git rev-parse origin/main)
 if [ "$current_commit" != "$latest_commit" ]; then
   echo "Pulling the latest changes from GitHub..."
   git pull origin main
-  echo "Restarting the server..."
-  pm2 restart all
+  echo "Restating docker containers..."
+  docker-compose up -d --build
+  echo "Done."
 else
   echo "No changes. Nothing to do."
 fi
